@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.udacity.shoestore.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcome" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome"
+        android:name="com.udacity.shoestore.welcome"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcome_to_instructions"
+            app:destination="@id/instructions" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructions"
+        android:name="com.udacity.shoestore.Instructions"
+        android:label="fragment_instructions"
+        tools:layout="@layout/fragment_instructions" >
+        <action
+            android:id="@+id/action_instructions_to_shoelist"
+            app:destination="@id/shoelist" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoelist"
+        android:name="com.udacity.shoestore.shoelist"
+        android:label="fragment_shoelist"
+        tools:layout="@layout/fragment_shoelist" >
+        <action
+            android:id="@+id/action_shoelist_to_shoedetails"
+            app:destination="@id/shoedetails"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/shoedetails"
+        android:name="com.udacity.shoestore.shoedetails"
+        android:label="fragment_shoedetails"
+        tools:layout="@layout/fragment_shoedetails" >
+        <action
+            android:id="@+id/action_shoedetails_to_shoelist"
+            app:destination="@id/shoelist"
+            app:popUpTo="@id/login" />
+    </fragment>
+</navigation>
